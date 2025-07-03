@@ -1,0 +1,1012 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Added ad script here -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9546002208255150"
+     crossorigin="anonymous"></script>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Play Truth or Dare online with friends! Choose from hundreds of fun questions and challenges. Safe for kids mode available.">
+    <meta property="og:title" content="Truth or Dare Online Game">
+    <meta property="og:description" content="The ultimate Truth or Dare experience - play with friends anywhere!">
+    <meta property="og:type" content="website">
+    <!-- Updated URL here -->
+    <meta property="og:url" content="https://www.kathaasanjaya.online">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Truth or Dare - Fun Party Game Online</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ffe66d;
+            --dark-color: #292f36;
+            --light-color: #f7fff7;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+
+        [data-theme="dark"] {
+            --primary-color: #ff6b6b;
+            --secondary-color: #4ecdc4;
+            --accent-color: #ffe66d;
+            --dark-color: #f7fff7;
+            --light-color: #292f36;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            transition: var(--transition);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, var(--primary-color), var(--secondary-color), var(--accent-color));
+            background-size: 300% 300%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        h1, h2, h3 {
+            font-family: 'Fredoka One', cursive;
+            font-weight: 400;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+            text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        h1 span {
+            color: var(--secondary-color);
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        p {
+            line-height: 1.6;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-color);
+        }
+
+        .mode-selector {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .mode-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            box-shadow: var(--shadow);
+        }
+
+        .mode-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .cta-btn {
+            padding: 0.8rem 2rem;
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .game-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .game-controls, .secondary-controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .game-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #truth-btn {
+            background-color: #6bceff;
+            color: white;
+        }
+
+        #dare-btn {
+            background-color: #ff6b6b;
+            color: white;
+        }
+
+        #random-btn {
+            background-color: #9b6bff;
+            color: white;
+        }
+
+        #next-btn {
+            background-color: var(--secondary-color);
+            color: white;
+        }
+
+        #share-btn {
+            background-color: var(--accent-color);
+            color: var(--dark-color);
+        }
+
+        .game-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 500px;
+            height: 300px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-front {
+            background-color: white;
+            background: linear-gradient(135deg, var(--light-color) 0%, white 100%);
+            color: var(--dark-color);
+        }
+
+        .card-back {
+            background-color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-content {
+            width: 100%;
+        }
+
+        .settings-panel {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .settings-btn {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .settings-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .settings-btn .tooltip {
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--dark-color);
+            color: white;
+            padding: 0.5rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .settings-btn:hover .tooltip {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .social-sharing {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 0.8rem 1.2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+        }
+
+        .twitter {
+            background-color: #1DA1F2;
+            color: white;
+        }
+
+        .disclaimer {
+            max-width: 600px;
+            margin: 0 auto 1rem;
+            font-size: 0.8rem;
+            color: var(--dark-color);
+            opacity: 0.7;
+        }
+
+        .copyright {
+            font-size: 0.8rem;
+            color: var(--dark-color);
+            opacity: 0.7;
+        }
+
+        .confetti-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .notification {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 1000;
+        }
+        
+        .notification.show {
+            opacity: 1;
+        }
+
+        /* Ad container styling */
+        .ad-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            width: 100%;
+        }
+
+        .ad-banner {
+            width: 728px;
+            height: 90px;
+            background-color: #f5f5f5;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, sans-serif;
+            color: #666;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Responsive ad */
+        @media (max-width: 768px) {
+            .ad-banner {
+                width: 320px;
+                height: 100px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .card-container {
+                height: 250px;
+            }
+            
+            .game-controls, .secondary-controls {
+                gap: 0.5rem;
+            }
+            
+            .game-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+            }
+            
+            .social-btn {
+                padding: 0.6rem 1rem;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .card-container {
+                height: 200px;
+            }
+            
+            .card-front, .card-back {
+                padding: 1rem;
+            }
+            
+            .social-sharing {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .social-btn {
+                width: 100%;
+                max-width: 200px;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <div class="notification" id="notification">Text copied to clipboard!</div>
+    
+    <header class="hero">
+        <h1>Truth <span>or</span> Dare</h1>
+        <p>The ultimate party game experience!</p>
+        <div class="mode-selector">
+            <button id="kids-mode-btn" class="mode-btn active">Kids Mode</button>
+            <button id="adults-mode-btn" class="mode-btn">Adults Mode</button>
+        </div>
+        <button id="start-btn" class="cta-btn">Start Game</button>
+    </header>
+
+    <!-- Ad container added here -->
+    <div class="ad-container">
+        <div class="ad-banner">
+            Ad Space (728x90) - Your Ad Will Show Here
+        </div>
+    </div>
+
+    <main class="game-container">
+        <div class="game-controls">
+            <button id="truth-btn" class="game-btn"><i class="fas fa-comment"></i> Truth</button>
+            <button id="dare-btn" class="game-btn"><i class="fas fa-bolt"></i> Dare</button>
+            <button id="random-btn" class="game-btn"><i class="fas fa-random"></i> Random</button>
+        </div>
+        
+        <div class="card-container">
+            <div class="card">
+                <div class="card-front">
+                    <div class="card-content">
+                        <h2>Truth or Dare?</h2>
+                        <p>Click a button to start playing!</p>
+                    </div>
+                </div>
+                <div class="card-back">
+                    <div class="card-content">
+                        <h2 id="question-type">Truth</h2>
+                        <p id="question-text">What's your biggest fear?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="secondary-controls">
+            <button id="next-btn" class="game-btn"><i class="fas fa-redo"></i> Next</button>
+            <button id="share-btn" class="game-btn"><i class="fas fa-share-alt"></i> Share</button>
+        </div>
+    </main>
+
+    <div class="settings-panel">
+        <button id="sound-toggle" class="settings-btn" aria-label="Toggle sound effects">
+            <span class="icon">🔊</span>
+            <span class="tooltip">Toggle Sound</span>
+        </button>
+        <button id="dark-mode-toggle" class="settings-btn" aria-label="Toggle dark mode">
+            <span class="icon">🌙</span>
+            <span class="tooltip">Dark Mode</span>
+        </button>
+    </div>
+
+    <footer>
+        <div class="social-sharing">
+            <button class="social-btn whatsapp" id="whatsapp-share">
+                <i class="fab fa-whatsapp"></i> WhatsApp
+            </button>
+            <button class="social-btn instagram" id="instagram-share">
+                <i class="fab fa-instagram"></i> Instagram
+            </button>
+            <button class="social-btn twitter" id="twitter-share">
+                <i class="fab fa-twitter"></i> Twitter
+            </button>
+        </div>
+        <div class="disclaimer">
+            <p>This game is intended for entertainment purposes only. Play responsibly.</p>
+        </div>
+        <div class="copyright">
+            <p>&copy; <span id="current-year"></span> Truth or Dare Game. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <div class="confetti-container"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // DOM Elements
+            const card = document.querySelector('.card');
+            const cardContainer = document.querySelector('.card-container');
+            const questionTypeElement = document.getElementById('question-type');
+            const questionTextElement = document.getElementById('question-text');
+            const startBtn = document.getElementById('start-btn');
+            const truthBtn = document.getElementById('truth-btn');
+            const dareBtn = document.getElementById('dare-btn');
+            const randomBtn = document.getElementById('random-btn');
+            const nextBtn = document.getElementById('next-btn');
+            const shareBtn = document.getElementById('share-btn');
+            const kidsModeBtn = document.getElementById('kids-mode-btn');
+            const adultsModeBtn = document.getElementById('adults-mode-btn');
+            const soundToggle = document.getElementById('sound-toggle');
+            const darkModeToggle = document.getElementById('dark-mode-toggle');
+            const confettiContainer = document.querySelector('.confetti-container');
+            const currentYearElement = document.getElementById('current-year');
+            const notification = document.getElementById('notification');
+            
+            // Game state
+            let currentMode = 'kids';
+            let currentQuestionType = '';
+            let soundEnabled = true;
+            let darkModeEnabled = false;
+            let playCount = 0;
+            
+            // Questions database
+            const questions = {
+                kids: {
+                    truth: [
+                        "What's the most embarrassing thing you've ever done in school?",
+                        "If you could be any animal, what would you be and why?",
+                        "What's your favorite thing about your best friend?",
+                        "What's something you're really good at?",
+                        "If you could have any superpower, what would it be?",
+                        "What's your favorite movie and why?",
+                        "What's the silliest thing you've ever said?",
+                        "If you could only eat one food for the rest of your life, what would it be?",
+                        "What's your favorite thing to do on a rainy day?",
+                        "If you could switch lives with anyone for a day, who would it be?"
+                    ],
+                    dare: [
+                        "Do your best impression of a chicken.",
+                        "Sing the alphabet song backwards.",
+                        "Do 10 jumping jacks right now.",
+                        "Let someone tickle you for 10 seconds without laughing.",
+                        "Try to lick your elbow.",
+                        "Dance like a robot for 30 seconds.",
+                        "Wear socks on your hands for the next 3 rounds.",
+                        "Say the alphabet with your mouth closed.",
+                        "Hop on one foot while singing 'Twinkle Twinkle Little Star'.",
+                        "Pretend to be a fish out of water for 30 seconds."
+                    ]
+                },
+                adults: {
+                    truth: [
+                        "What's the most embarrassing thing you've ever done on a date?",
+                        "Have you ever pretended to like a gift you hated? What was it?",
+                        "What's your guilty pleasure TV show?",
+                        "What's the weirdest thing you've ever eaten?",
+                        "If you could erase one thing from your past, what would it be?",
+                        "What's the biggest lie you've ever told?",
+                        "What's something you've done that you hope your parents never find out about?",
+                        "What's the most ridiculous thing you've ever bought?",
+                        "Have you ever had a crush on a friend's partner?",
+                        "What's the strangest dream you've ever had?"
+                    ],
+                    dare: [
+                        "Let the group choose an embarrassing photo of you to post on social media.",
+                        "Call a friend and sing 'Happy Birthday' to them (even if it's not their birthday).",
+                        "Let someone style your hair in the silliest way possible.",
+                        "Do your best impression of a celebrity until someone guesses who it is.",
+                        "Text your crush with a message the group chooses.",
+                        "Eat a spoonful of a condiment you hate.",
+                        "Let the group give you a silly nickname you have to respond to for the rest of the game.",
+                        "Do an interpretive dance of your favorite song.",
+                        "Wear your clothes backwards for the next 3 rounds.",
+                        "Let someone draw a silly mustache on your face with a marker."
+                    ]
+                }
+            };
+            
+            // Initialize the game
+            function initGame() {
+                // Set current year in footer
+                currentYearElement.textContent = new Date().getFullYear();
+                
+                // Check for saved preferences in localStorage
+                if (localStorage.getItem('darkMode') === 'true') {
+                    toggleDarkMode();
+                }
+                
+                if (localStorage.getItem('soundEnabled') === 'false') {
+                    toggleSound();
+                }
+                
+                if (localStorage.getItem('gameMode') === 'adults') {
+                    toggleGameMode();
+                }
+                
+                // Event listeners
+                startBtn.addEventListener('click', startGame);
+                truthBtn.addEventListener('click', () => getQuestion('truth'));
+                dareBtn.addEventListener('click', () => getQuestion('dare'));
+                randomBtn.addEventListener('click', getRandomQuestion);
+                nextBtn.addEventListener('click', getNextQuestion);
+                shareBtn.addEventListener('click', shareQuestion);
+                kidsModeBtn.addEventListener('click', toggleGameMode);
+                adultsModeBtn.addEventListener('click', toggleGameMode);
+                soundToggle.addEventListener('click', toggleSound);
+                darkModeToggle.addEventListener('click', toggleDarkMode);
+                cardContainer.addEventListener('click', flipCard);
+                
+                // Initialize social sharing
+                setupSocialSharing();
+                
+                // Initialize ad script
+                initAds();
+            }
+            
+            // Initialize ad script
+            function initAds() {
+                // Only initialize if adsbygoogle is loaded
+                if (window.adsbygoogle) {
+                    (adsbygoogle = window.adsbygoogle || []).push({
+                        google_ad_client: "ca-pub-9546002208255150",
+                        enable_page_level_ads: true
+                    });
+                }
+            }
+            
+            // Setup social sharing buttons
+            function setupSocialSharing() {
+                // WhatsApp sharing
+                document.getElementById('whatsapp-share').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!currentQuestionType || !questionTextElement.textContent) return;
+                    
+                    const text = `I got a ${currentQuestionType}: "${questionTextElement.textContent}"\n\n` +
+                                 `Play Truth or Dare with me! ${window.location.href}`;
+                    
+                    // Use WhatsApp API
+                    const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(text)}`;
+                    window.open(whatsappUrl, '_blank');
+                });
+
+                // Instagram sharing
+                document.getElementById('instagram-share').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!currentQuestionType || !questionTextElement.textContent) return;
+                    
+                    const text = `I got a ${currentQuestionType}: "${questionTextElement.textContent}"\n\n` +
+                                 `Play Truth or Dare with me! ${window.location.href}`;
+                    
+                    // Copy to clipboard
+                    copyToClipboard(text);
+                    showNotification('Text copied! Paste in Instagram story');
+                    
+                    // Open Instagram on mobile, web on desktop
+                    if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                        window.open('instagram://', '_blank');
+                    } else {
+                        window.open('https://www.instagram.com/', '_blank');
+                    }
+                });
+
+                // Twitter sharing
+                document.getElementById('twitter-share').addEventListener('click', (e) => {
+                    e.preventDefault();
+                    if (!currentQuestionType || !questionTextElement.textContent) return;
+                    
+                    const text = `I got a ${currentQuestionType}: "${questionTextElement.textContent}"\n\n` +
+                                 `Play Truth or Dare with me! ${window.location.href} #TruthOrDare`;
+                    
+                    const twitterUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}`;
+                    window.open(twitterUrl, '_blank');
+                });
+            }
+            
+            // Show notification
+            function showNotification(message) {
+                notification.textContent = message;
+                notification.classList.add('show');
+                
+                setTimeout(() => {
+                    notification.classList.remove('show');
+                }, 3000);
+            }
+            
+            // Start the game
+            function startGame() {
+                startBtn.style.display = 'none';
+                document.querySelector('.game-controls').style.display = 'flex';
+                document.querySelector('.secondary-controls').style.display = 'flex';
+                getRandomQuestion();
+            }
+            
+            // Get a random question of specified type
+            function getQuestion(type) {
+                if (!type) return;
+                
+                currentQuestionType = type;
+                const questionPool = questions[currentMode][type];
+                const randomIndex = Math.floor(Math.random() * questionPool.length);
+                const question = questionPool[randomIndex];
+                
+                updateCard(type, question);
+                playSound(type);
+                
+                // Track plays for ads
+                playCount++;
+                if (playCount % 5 === 0) {
+                    showAd();
+                }
+            }
+            
+            // Get a random question (either truth or dare)
+            function getRandomQuestion() {
+                const randomType = Math.random() < 0.5 ? 'truth' : 'dare';
+                getQuestion(randomType);
+            }
+            
+            // Get next question of current type
+            function getNextQuestion() {
+                if (currentQuestionType) {
+                    getQuestion(currentQuestionType);
+                } else {
+                    getRandomQuestion();
+                }
+            }
+            
+            // Update the card with new question
+            function updateCard(type, text) {
+                questionTypeElement.textContent = type.charAt(0).toUpperCase() + type.slice(1);
+                questionTextElement.textContent = text;
+                
+                // Reset card if it's flipped
+                if (card.classList.contains('flipped')) {
+                    card.classList.remove('flipped');
+                    // Wait for flip animation to complete before changing content
+                    setTimeout(() => {
+                        card.classList.add('flipped');
+                    }, 10);
+                } else {
+                    card.classList.add('flipped');
+                }
+                
+                // Add fade-in animation
+                questionTextElement.classList.add('fade-in');
+                setTimeout(() => {
+                    questionTextElement.classList.remove('fade-in');
+                }, 500);
+            }
+            
+            // Flip the card
+            function flipCard() {
+                if (card.classList.contains('flipped')) return;
+                card.classList.add('flipped');
+            }
+            
+            // Toggle between kids and adults mode
+            function toggleGameMode() {
+                currentMode = currentMode === 'kids' ? 'adults' : 'kids';
+                kidsModeBtn.classList.toggle('active');
+                adultsModeBtn.classList.toggle('active');
+                
+                // Save preference to localStorage
+                localStorage.setItem('gameMode', currentMode);
+                
+                // Get a new question in the new mode
+                if (currentQuestionType) {
+                    getQuestion(currentQuestionType);
+                } else {
+                    getRandomQuestion();
+                }
+            }
+            
+            // Toggle sound effects
+            function toggleSound() {
+                soundEnabled = !soundEnabled;
+                soundToggle.querySelector('.icon').textContent = soundEnabled ? '🔊' : '🔇';
+                
+                // Save preference to localStorage
+                localStorage.setItem('soundEnabled', soundEnabled);
+            }
+            
+            // Toggle dark mode
+            function toggleDarkMode() {
+                darkModeEnabled = !darkModeEnabled;
+                document.body.setAttribute('data-theme', darkModeEnabled ? 'dark' : 'light');
+                darkModeToggle.querySelector('.icon').textContent = darkModeEnabled ? '☀️' : '🌙';
+                
+                // Save preference to localStorage
+                localStorage.setItem('darkMode', darkModeEnabled);
+            }
+            
+            // Play sound effect
+            function playSound(type) {
+                if (!soundEnabled) return;
+                
+                // For dares, add confetti effect
+                if (type === 'dare') {
+                    createConfetti();
+                }
+            }
+            
+            // Create confetti effect
+            function createConfetti() {
+                // Clear previous confetti
+                confettiContainer.innerHTML = '';
+                
+                // Create 50 confetti pieces
+                for (let i = 0; i < 50; i++) {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'absolute';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = getRandomColor();
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.left = `${Math.random() * 100}vw`;
+                    confetti.style.top = '-10px';
+                    confetti.style.opacity = '0.8';
+                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
+                    
+                    // Animation
+                    confetti.style.animation = `fall ${Math.random() * 3 + 2}s linear forwards`;
+                    
+                    confettiContainer.appendChild(confetti);
+                    
+                    // Remove after animation
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 5000);
+                }
+                
+                // Add CSS for animation
+                const style = document.createElement('style');
+                style.textContent = `
+                    @keyframes fall {
+                        to {
+                            transform: translateY(100vh) rotate(360deg);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                document.head.appendChild(style);
+            }
+            
+            // Helper function to get random color
+            function getRandomColor() {
+                const colors = ['#ff6b6b', '#4ecdc4', '#ffe66d', '#ff9ff3', '#feca57', '#5f27cd'];
+                return colors[Math.floor(Math.random() * colors.length)];
+            }
+            
+            // Share current question
+            function shareQuestion() {
+                if (!currentQuestionType || !questionTextElement.textContent) return;
+                
+                const text = `I got a ${currentQuestionType}: "${questionTextElement.textContent}" - Play Truth or Dare with me! ${window.location.href}`;
+                
+                // Check if Web Share API is available
+                if (navigator.share) {
+                    navigator.share({
+                        title: 'Truth or Dare',
+                        text: text,
+                        url: window.location.href
+                    }).catch(err => {
+                        console.log('Error sharing:', err);
+                        copyToClipboard(text);
+                        showNotification('Copied to clipboard!');
+                    });
+                } else {
+                    copyToClipboard(text);
+                    showNotification('Copied to clipboard!');
+                }
+            }
+            
+            // Copy text to clipboard
+            function copyToClipboard(text) {
+                return new Promise((resolve, reject) => {
+                    if (navigator.clipboard) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            resolve(true);
+                        }).catch(err => {
+                            // Fallback for browsers that don't support clipboard API
+                            copyUsingTextarea(text);
+                            resolve(true);
+                        });
+                    } else {
+                        // For older browsers
+                        copyUsingTextarea(text);
+                        resolve(true);
+                    }
+                });
+            }
+            
+            function copyUsingTextarea(text) {
+                const textarea = document.createElement('textarea');
+                textarea.value = text;
+                textarea.style.position = 'fixed';
+                textarea.style.left = '-9999px';
+                document.body.appendChild(textarea);
+                textarea.select();
+                
+                try {
+                    document.execCommand('copy');
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                } finally {
+                    document.body.removeChild(textarea);
+                }
+            }
+            
+            // Show ad (placeholder)
+            function showAd() {
+                console.log("Show ad after 5 plays");
+                // In a real implementation, you would show an ad here
+            }
+            
+            // Initialize the game
+            initGame();
+        });
+    </script>
+</body>
+</html>
